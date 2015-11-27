@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="stylesheets/core.css" media="screen">
     <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/github-light.css">
+    <style type="text/css">
+      .test-overflow{width: 200px;height: 24px;line-height:24px;}
+      .test-overflow span{width:33.33%;display:inline-block;position: relative;height:100%;overflow:hidden;}
+      .test-overflow .one{background-color:#DB4747;}
+      .test-overflow .two{background-color:#D42BA9;}
+      .test-overflow .three{background-color:#149265;}
+    </style>
 
     <script type="text/javascript" src="javascripts/modernizr.js"></script>
     <script type="text/javascript" src="./javascripts/jquery-1.7.2.min.js"></script>
@@ -47,6 +54,9 @@
 
       <section id="main_content">
         <p>It is my first GitHub website!</p>
+        <div class="test-overflow">
+          <span class="one">one</span><span class="one">two</span><span class="one">three</span>
+        </div>
       </section>
 
       <footer>
