@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<!-- Website Design By: www.happyworm.com -->
+<title>Demo : jPlayer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link href="./css/jplayer.pink.flag.css" rel="stylesheet" type="text/css" />
+<link href="./css/jplay-rect-style.css" rel="stylesheet" type="text/css" />
+<link href="./videoskin/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="./js/jquery.jplayer.min.js"></script>
+
+
+
+</head>
+<body>
+<div id="jp_container_1" class="jp-video jp-video-360p"><!--jp-video-360p是在CSS里预设好的宽640高360的样式-->
+   <div class="jp-type-single">
+           <div id="jquery_jplayer_1" class="jp-jplayer"></div><!--播放画面flash窗口-->
+           <div class="jp-gui">
+                 <div class="jp-video-play"><a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a></div>
+              <div class="jp-interface">
+                  <div class="jp-progress">
+                         <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                       </div>
+                  </div>
+                  <div class="jp-current-time"></div>
+                  <div class="jp-duration"></div>
+                  <div class="jp-title"><ul><li>My Video</li></ul></div>
+                  <div class="jp-controls-holder">
+                       <ul class="jp-controls">
+                            <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                            <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                            <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                            <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                            <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                       </ul>
+                       <div class="jp-volume-bar"><div class="jp-volume-bar-value"></div></div>
+                       <ul class="jp-toggles">
+                            <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
+                            <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
+                            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+                            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+                       </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="jp-no-solution">
+              <span>Update Required</span>To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+          </div>
+   </div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		 $("#jquery_jplayer_1").jPlayer({
+			  ready: function () {
+			   $(this).jPlayer("setMedia", {
+			    m4v: "./source/F579DF034B9B790B4DBBF7AA9C64529C152042087720575944613310613447.mp4"
+			    // ogv: "media/myVideo.ogv", 
+			    // webmv: "media/myVideo.webm", 
+			    // poster: "media/myVideo.png" //封面图
+			   }); //如果要一开始就全屏，加.jPlayer("fullScreen")但只是全窗口而不是全屏
+			  },
+			  swfPath: './js',
+			  solution: 'html, flash',
+			  supplied: "webmv, ogv, m4v",
+			  preload: 'metadata',
+			  muted: false,
+			  videoPlay: '.jp-video-play',
+			  currentTime: '.jp-current-time',
+			  duration: '.jp-duration',
+			  fullScreen: '.jp-full-screen',
+			  noSolution: '.jp-no-solution',
+			  errorAlerts: false,
+			  size: {
+			       width: "640px", height: "360px", cssClass: "jp-video-360p"
+			  },
+			  smoothPlayBar: true
+		 });
+	});
+
+
+	//Todo:更新歌曲列表
+	// playList.setPlaylist([{
+	// 		title:"Cyber Sonnet",
+	// 		artist:"胡刚13",
+	// 		mp3:"./mp3/The Dawn.mp3",
+	// 		oga:"",
+	// 		poster:""
+	// 	}]);
+
+	//Todo:添加歌曲
+	// $('.test-btn').click(function(){
+	// 	playList.setPlaylist([{
+	// 			title:"eeee",
+	// 			artist:"胡刚13",
+	// 			mp3:"./mp3/deguo.mp3",
+	// 			oga:"",
+	// 			poster:""
+	// 		}]);		
+	// });
+
+	//Todo:播放某歌曲，由括号内的索引值决定
+	// playList.play(1);
+
+	//Todo:获取播放列表中列表的长度
+	// console.log(playList.playlist.length);
+
+</script>
+
+</body>
+
+</html>

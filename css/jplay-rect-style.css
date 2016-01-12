@@ -1,0 +1,10 @@
+div#jp_container_1{width: 1024px;margin: 0 auto;}
+.jp-audio .jp-controls-holder{width: 100%;overflow: hidden;position: relative;}
+/*.jp-audio{width: 1024px;}*/
+.jp-controls{background: url("../img/../img/jplayer.pink.flag.jpg") 0 0 no-repeat;padding: 1px 0 2px 1px;overflow: hidden;
+	width: 150px;height: 34px;position: relative;float: left;}
+.jp-progress{height: 13px;position: relative;margin-left: 170px;margin-top: 20px;padding-right: 10px;}
+.jp-current-time, .jp-duration{position: absolute; top: 0;}
+.jp-duration{right: 12px;}
+.jp-current-time{right: 20px;}
+.jp-audio {position: relative;padding-top: 20px;}
