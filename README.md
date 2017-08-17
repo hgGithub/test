@@ -1,3 +1,3 @@
-# hgpersonalweb.com
+# hugang.com
 
-shishi
+This file is ony practice project for myself.
