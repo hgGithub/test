@@ -1,9 +1,8 @@
 /*
-*Descrip: A flexible front-end fit for phone.
+*Descrip: A flexible front-end fit for mobile-phone.
 *Date: 2017/08/17
 *设计稿以640*1136为参考
 *rem = 100px;
-*
 */
 ;(function(win, doc, undefined){
 
@@ -13,30 +12,23 @@
 
 	var devicePras = {
 		isAndroid: function() {//判断终端设备是否为安卓
-
 			return /android|adr/gi.test(ua) || false;
 		},
 		isIos: function() {//判断终端设备是否为苹果
-
 			return (/iphone|ipod|ipad/gi.test(ua) && !this.isAndroid()) || false;
 		},
 		scale: function() { //返回viewpot缩放比例, 为高清适配所用。
 			if(this.isIos()){
-
-
 				return 1 / this.dpr();
 			}else {
-
 				return 1;
 			}
 		},
 		dpr: function() { //返回设备dpr
 
 			if(this.isIos()){
-
 				return Math.min(win.devicePixelRatio, 3);
 			}else{
-
 				return 1;
 			}
 		}
@@ -69,22 +61,21 @@
 		docEle.dataset.dpr = devicePras.dpr();
 	};
 
-
+	////设计稿以640*1136，及根节点字体100px为参考。
 	function setFontSize(){
 		var docEle = doc.documentElement,
 			clientWidth = docEle.clientWidth;
 
-		var fs = (clientWidth / 6.4).toFixed(3);      //字体大小保留三位小数
+		var fs = (clientWidth / 6.4).toFixed(3);      //字体大小保留三位小数,根据设计稿不同可以调整该系数（6.4）。
 		if(/\.0{1,}/.test(fs)) fs = fs.slice(0, -4);  //如果是整数则继续保留整数的格式。
 
-		docEle.style.fontSize = fs + "px";	//设计稿以640*1136，及根节点字体100px为参考。
+		docEle.style.fontSize = fs + "px";
 
 	};
-
 	
 	function pageShowCallBack(e) {
 		e = e || event;
-		if(e.persisted) {
+		if(e.persisted) { //页面是否被缓存
 			timer && clearTimeout(timer);
 
 			timer = setTimeout(setViewport(doc.documentElement), 300);
