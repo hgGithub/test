@@ -1,7 +1,7 @@
 Description
 ====
 
-#### This file is ony practice project for myself.
+#### This file is only practice project for myself.
 
 flexiblefit.js
 ====
